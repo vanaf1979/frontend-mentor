@@ -1,0 +1,164 @@
+/*
+--------------------------------------------------------------
+# Base
+--------------------------------------------------------------
+*/
+
+* {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+html, body {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--text-color, #323232);
+}
+
+@media screen and ( max-width: 568px ) {
+    * {
+        font-size: 16px;
+    }
+
+    html, body {
+        font-size: 16px;
+    }
+}
+
+/*
+--------------------------------------------------------------
+# Headings
+--------------------------------------------------------------
+*/
+
+h1, h2, h3, h4, h5, h6 {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+    color: var(--heading-color, #323232);
+}
+
+h1 {
+    font-size: calc((2rem / 16) * var(--font-size));
+    line-height: 3.2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+}
+
+h6 {
+    font-size: 1rem;
+    line-height: 1.6rem;
+}
+
+/*
+--------------------------------------------------------------
+# Paragraphs
+--------------------------------------------------------------
+*/
+
+p {
+    display: block;
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    padding: 0;
+    line-height: 1.6rem;
+}
+
+/*
+--------------------------------------------------------------
+# Links
+--------------------------------------------------------------
+*/
+
+a {
+    font-size: inherit;
+    color: inherit;
+    transition: all 0.2s 0.085s ease-out;
+}
+
+a:hover {
+    color: var(--heading-color);
+}
+
+a:visited {
+    opacity: 0.8;
+}
+
+/*
+--------------------------------------------------------------
+# Lists
+--------------------------------------------------------------
+*/
+
+ul, ol {
+    display: block;
+    padding: 0;
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.6em;
+}
+
+ul:after,
+ol:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+ol {
+    list-style: decimal inside;
+}
+
+li {
+    line-height: 1.6rem;
+}
+
+/*
+--------------------------------------------------------------
+# Address
+--------------------------------------------------------------
+*/
+
+address {
+    font-size: inherit;
+    font-style: normal;
+    line-height: 1.6rem;
+    color: inherit;
+}
+
+/*
+--------------------------------------------------------------
+# Misc text styles
+--------------------------------------------------------------
+*/
+
+s,
+del,
+strike {
+    text-decoration: line-through;
+}

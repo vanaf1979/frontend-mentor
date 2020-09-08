@@ -1,0 +1,495 @@
+/*
+* 1 - Properties
+* 2 - Resets
+* 3 - Html/Body
+* 4 - Typography
+* 5 - Images
+* 6 - A11y
+* 7 - Wrapper
+* 8 - Header
+* 9 - Cta's
+* 10 - Counters
+* 11 - Wave sections
+* 12 - Content sections
+* 13 - Footer sections
+*/
+
+/*
+* 1 - Properties
+*/
+:root {
+    --clr-pink: hsl(322, 100%, 66%);
+    --clr-cyan: hsl(192, 100%, 9%);
+    --clr-blue: hsl(207, 100%, 98%);
+    --clr-light: #ffffff;
+    --ff-text: 'Open Sans', sans-serif;
+    --ff-headings: 'Poppins', sans-serif;
+}
+
+/*
+* 2 - Resets
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+}
+
+/*
+* 3 - Html/Body
+*/
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--ff-text);
+    line-height: 1.6rem;
+    font-weight: 400;
+    color: var(--clr-cyan);
+    text-rendering: optimizeSpeed;
+}
+
+/*
+* 4 - Typography
+*/
+h1, h2, h3 {
+    font-family: var(--ff-headings);
+    line-height: 1.4em;
+}
+
+h1 {
+    font-size: 3rem;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-size: clamp(1.6rem, 5vw, 2.5rem);
+}
+
+h3 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+/*
+* 5 - Images
+*/
+img {
+    max-width: 100%;
+}
+
+/*
+* 6 - A11y
+*/
+:focus {
+    outline: 5px auto Highlight;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
+.sr-show:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.skip-link {
+    display: inline-block;
+    height: auto;
+    width: auto;
+    padding: 0.3rem 1rem;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-radius: 0 0 0.5rem 0.5rem;
+    background: var(--clr-pink);
+    color: #efefef;
+    transform: translateX(-50%);
+}
+
+/*
+* 7 - Wrapper
+*/
+.wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/*
+* 8 - Header
+*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: clamp(3rem, 5vw, 5rem) auto;
+    padding: 0 1rem;
+}
+
+.header .button {
+    padding: 0.4rem 2rem;
+    border: solid 1px var(--clr-pink);
+    border-radius: 1000px;
+    background: none;
+    color: var(--clr-pink);
+    text-decoration: none;
+    transition: all 0.2s 0.05s ease-in-out;
+}
+
+.header .button:hover,
+.header .button:focus {
+    color: var(--clr-light);
+    background: var(--clr-pink);
+}
+
+@media screen and ( max-width: 375px ) {
+    .header img {
+        width: 70%;
+    }
+
+    .header .button {
+        padding: 0.2rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+/*
+* 9 - Cta's
+*/
+.cta {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 15rem;
+    margin-top: clamp(0rem, 30vw, 12rem);
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.cta > * + * {
+    margin-top: 2.5rem;
+}
+
+.cta p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    max-width: 55ch;
+    line-height: 2rem;
+}
+
+.cta .button {
+    display: inline-block;
+    padding: 1.5rem 6rem;
+    border: solid 1px var(--clr-pink);
+    border-radius: 1000px;
+    background: var(--clr-pink);
+    font-size: 1.2rem;
+    color: var(--clr-light);
+    text-decoration: none;
+    transition: all 0.2s 0.05s ease-in-out;
+}
+
+.cta .button:hover,
+.cta .button:focus {
+    border: solid 1px var(--clr-pink);
+    background: none;
+    color: var(--clr-pink);
+}
+
+.cta img {
+    margin-top: 7.5rem;
+}
+
+@media screen and ( max-width: 505px ) {
+    .cta img {
+        margin-top: 5rem;
+    }
+
+    .cta .button {
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
+    }
+}
+
+/*
+* 10 - Counters
+*/
+.counters {
+    display: flex;
+    justify-content: space-around;
+    gap: 8rem;
+    margin-top: 9rem;
+    padding: 0 2rem;
+}
+
+.counter > * + * {
+    margin-top: 1rem;
+}
+
+.counter .count {
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 1em;
+    text-align: center;
+}
+
+.counter .sub {
+    text-align: center;
+    font-size: 1.4rem;
+    opacity: 0.6;
+}
+
+@media screen and ( max-width: 605px ) {
+    .counters {
+        flex-flow: column;
+        max-width: 60vw;
+    }
+}
+
+/*
+* 11 - Wave sections
+*/
+.waves {
+    margin: 10rem auto;
+    padding: 11vw 0;
+    position: relative;
+    background: var(--clr-blue);
+}
+
+.waves:before {
+    content: '';
+    display: block;
+    height: 10.8vw;
+    background-color: #ffffff;
+    background-image: url(../img/bg-section-top-desktop-1.svg);
+    background-size: cover;
+    background-position: center top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.waves:after {
+    content: '';
+    display: block;
+    height: 10.8vw;
+    background-color: #ffffff;
+    background-image: url(../img/bg-section-bottom-desktop-1.svg);
+    background-size: cover;
+    background-position: center bottom;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@media screen and ( max-width: 375px ) {
+    .waves {
+        margin: 5rem auto;
+    }
+}
+
+/*
+* 12 - Content sections
+*/
+.content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    gap: clamp(2rem, 5vw, 4rem);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.6rem;
+}
+
+.content > * {
+    flex: min(240px, 100%);
+}
+
+.content article > * + * {
+    margin-top: 1.6rem;
+}
+
+.content article p {
+    max-width: 55ch;
+}
+
+@media screen and ( max-width: 375px ) {
+    .content img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .content img,
+    .content .newsletter {
+        order: 1;
+    }
+
+    .content article,
+    .content .contact {
+        order: 2;
+    }
+}
+
+/*
+* 13 - Footer sections
+*/
+footer {
+    margin: 10rem auto 0rem auto;
+    padding: 11vw 0 4rem 0;
+    position: relative;
+    background: var(--clr-cyan);
+}
+
+footer:before {
+    content: '';
+    display: block;
+    height: 10.8vw;
+    background-color: #ffffff;
+    background-image: url(../img/bg-footer-top-desktop.svg);
+    background-size: cover;
+    background-position: center top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+footer * {
+    color: var(--clr-blue);
+}
+
+footer .inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6rem;
+    gap: clamp(2rem, 5vw, 4rem);
+    max-width: 1200px;
+    margin: 5rem auto 0 auto;
+    padding: 0 2rem;
+}
+
+footer .inner > * {
+    flex: min(240px, 100%);
+}
+
+footer section > * + * {
+    margin-top: 1.2rem;
+}
+
+footer .inner p {
+    font-size: 0.9rem;
+    max-width: 40ch;
+}
+
+footer a.phone,
+footer a.email {
+    display: block;
+    padding-left: 2rem;
+    line-height: 1.6rem;
+    text-decoration: none;
+    background-position: center left;
+    background-repeat: no-repeat;
+}
+
+footer a.phone {
+    background-image: url(../img/icon-phone.svg);
+}
+
+footer a.email {
+    background-image: url(../img/icon-email.svg);
+}
+
+footer a:hover,
+footer a:focus {
+    text-decoration: underline;
+}
+
+footer ul {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-start;
+    list-style: none;
+    margin-top: 5rem;
+    line-height: 1.6rem;
+    font-size: 2rem;
+}
+
+footer form {
+    display: grid;
+    margin: 2rem 0 6rem 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "input input button";
+    grid-gap: 1rem;
+}
+
+footer form input[type="email"] {
+    grid-area: input;
+    padding: 0.7rem 0.5rem;
+    line-height: 1;
+    color: var(--clr-cyan);
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+footer form input[type="submit"] {
+    grid-area: button;
+    padding: 0.83rem 2rem;
+    color: var(--clr-light);
+    background: var(--clr-pink);
+    font-size: 1rem;
+    border: solid 1px var(--clr-pink);
+    border-radius: 5px;
+    transition: all 0.2s 0.07s ease-in-out;
+}
+
+footer form input[type="submit"]:hover,
+footer form input[type="submit"]:focus {
+    border: solid 1px var(--clr-pink);
+    color: var(--clr-pink);
+    background: none;
+    cursor: pointer;
+}
+
+@media screen and ( max-width: 768px ) {
+    footer form {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "input input" "none button";
+    }
+}
+
+@media screen and ( max-width: 375px ) {
+    footer .contact {
+        order: 2;
+    }
+
+    footer .newsletter {
+        order: 1;
+    }
+
+    footer img {
+        width: 60%;
+    }
+}
